@@ -1,0 +1,25 @@
+<!-- new elements =====> crusor : pointer
+
+>>>>Colspan <<<<<<    
+====================
+colspan="2" - - - - > > >  this attribute is used when we want to emerge two "td"
+Note: delete second "td"
+=====================xxxxxxxxxxxxxxx=======================
+>>>>>SubString<<<<<<
+This is used when we want to delete last `word` or `thing` in values
+
+Example name = `Yewinmyat`
+
+if you want to select last word(`t`) , name[name.length-1]
+if you want to delete t ,name.substring [0,name.length-1]
+then you will return
+
+~>Yewinmya
+
+How to write
+============
+"The thing that you want to delete its last word or last sth"(eg.name) . substring (0,x.length-1)
+
+in this,```x.length-1`````` mean ````the last word in the sentence or sth``````````
+
+ -->

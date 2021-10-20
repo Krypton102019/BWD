@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your New Account</title>
+    <style>
+    .title{ text-transform:Capitalize; text-decoration:underline ; font-family: serif; background-color: antiquewhite;
+    text-align: center; font-size: xx-large;} 
+    .box{background-color: antiquewhite;text-align: justify; font-family: serif; font-size: 100;}
+    .legend{font-family: serif; font-size: xx-large;}
+</style>
+</head>
+<body>
+    <h1 class="title"> create your account </h1>
+    <fieldset class="box">
+        <form action="#" method="get">
+        <legend class="legend">Create Your Account</legend>
+        <label for="name" style="display: inline;">Your Name</label>
+        <input type="text" name="name" id="name" placeholder="first name">
+        <input type="text" name="sname" placeholder="second name">
+        <br><br>
+        <label for="gmail">Your Gmail</label>
+        <input type="gmail" name="gmail" id="gmail" placeholder="example@gmail.com" required>
+       <br><br>
+        <label for="Password">Your Password</label>
+        <input type="password" name="password" id="Password" placeholder="at least 7 words" required>
+        <input type="password" name="password" placeholder="confirm your password" required> 
+        <br><br>
+        <label for="address">Your Address</label>
+        <textarea name="address" id="address" rows="3" cols="50"></textarea>
+        <br><br>
+        
+      
+        <label for="age" style="text-transform:uppercase;">age</label>
+        <input type="number" name="age" id="age" width="3" height="3">
+        <br><br>
+        <button type="submit">Sign Up</button></form>
+    </fieldset>
+</body>
+</html>

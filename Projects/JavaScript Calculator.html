@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+<style>
+.key{border: 0px white solid;
+    width: 60px;
+    height: 64px;
+    border-radius: 110px;
+    margin: 2px;
+    background: #333333;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 65px;
+    text-align: center;
+display: inline-block;}
+body{background: black;}
+
+.keypad-table tr:first-child .key{background: #a5a5a5;}
+.keypad-table tr td:last-child .key{background: #ffa45c;}
+
+/* #first-row{background: #a5a5a5}
+
+#last-coloum{background: #ffa45c;} */
+
+h3{color: white;
+    text-align: right;
+    width: 254px;
+    font-size: 49px;
+    height: 3px;}
+/* *{font-size: 30px;
+padding: 0px;
+font-family: Arial;
+
+} */
+.wholeCalc{font-size: 30px;
+    padding: 0px;
+    font-family: Arial;
+    margin-left: 90px;
+    margin-top: 149px;
+}
+
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+    <div class=" wholeCalc">
+    <!-- display -->
+    <div class="display"><h3>0</h3></div>
+    <!-- keypad -->
+<div class="keypad">
+
+<table class="keypad-table">
+
+<tr >
+<td>
+    <div class="key" id="first-row"  onclick="allclear()">AC</div>
+</td>
+<td>
+    <div class="key" id="first-row" onclick="clearlast()">C</div>
+</td>
+<td>
+    <div class="key" id="first-row" onclick="showdisplay(`%`)">&percnt;</div>
+</td>
+<td>
+    <div class="key"  id="last-coloum" onclick="showdisplay(`/`)">&divide;</div>
+</td>
+</tr>
+<tr>
+    <td>
+        <div class="key" onclick="showdisplay(7)">7</div>
+    </td>
+    <td>
+        <div class="key" onclick="showdisplay(8)">8</div>
+    </td>
+    <td>
+        <div class="key" onclick="showdisplay(9)">9</div>
+    </td>
+    <td>
+        <div class="key" id="last-coloum" onclick="showdisplay(`*`)">x</div>
+    </td></tr>>
+    <tr>
+        <td>
+            <div class="key" onclick="showdisplay(4)">4</div>
+        </td>
+        <td>
+            <div class="key" onclick="showdisplay(5)">5</div>
+        </td>
+        <td>
+            <div class="key" onclick="showdisplay(6)">6</div>
+        </td>
+        <td>
+            <div class="key" id="last-coloum" onclick="showdisplay(`-`)">&minus;</div>
+        </td>
+        </tr><tr>
+<td>
+    <div class="key" onclick="showdisplay(1)">1</div>
+</td>
+<td>
+    <div class="key" onclick="showdisplay(2)">2</div>
+</td>
+<td>
+    <div class="key" onclick="showdisplay(3)">3</div>
+</td>
+<td>
+    <div class="key"id="last-coloum" onclick="showdisplay(`+`)">&plus;</div>
+</td>
+</tr>
+<tr>
+    <td colspan="2">
+        <div class="key" style="width: 120px;"  onclick="showdisplay(0)">0</div>
+    </td>
+    
+    <td>
+        <div class="key" onclick="showdisplay(`.`)">.</div>
+    </td>
+    <td>
+        <div class="key" id="last-coloum" onclick="calculate()">&equals;</div>
+    </td>
+    </tr>
+   
+
+
+
+
+
+
+
+
+</table>
+
+
+</div>
+</div>
+
+<script>
+    
+    let operators = [`+`,`-`,`%`,`*`,`/`]
+let displayText = document.querySelector(`h3`)
+
+let calckeys = document.querySelector(`.key`)
+
+// ShowDisplay Function
+//============================
+function showdisplay(x) { 
+    let current = displayText.innerHTML 
+    let lastIndex = current[current.length-1];
+// for substitute 0 with numbers in first number
+    if(displayText.innerHTML == 0) { return displayText.innerHTML = x}
+// for showing only one opreator
+//******************************************************************
+     else if(operators.includes(x) && operators.includes(lastIndex)) { console.log (current.substring(0,current.length-1)+x);
+         return displayText.innerHTML = `${current.substring(0,current.length-1)}${x}`}
+        
+    else {displayText.innerHTML +=x } }
+   
+
+
+// All Clear Function
+//======================
+function allclear (){
+ displayText.innerHTML = 0
+
+}
+// Calculate function
+//======================
+function calculate(){
+     document.querySelector(`h3`).innerHTML = eval(displayText.innerHTML)
+}
+//  Clear Function
+//=======================
+function clearlast(){ let current = displayText.innerHTML 
+if(current.length ==1) {displayText.innerHTML = 0} 
+else {displayText.innerHTML = current.substring(0,current.length-1)}}
+
+function multiply(y) { if(y == `*`) {return y = `x`}}
+
+</script>
+
+
+</body>
+</html>
+<!-- new elements =====> crusor : pointer
+
+>>>>Colspan <<<<<<    
+====================
+colspan="2" - - - - > > >  this attribute is used when we want to emerge two "td"
+Note: delete second "td"
+=====================xxxxxxxxxxxxxxx=======================
+>>>>>SubString<<<<<<
+This is used when we want to delete last `word` or `thing` in values
+
+Example name = `Yewinmyat`
+if you want to delete t ,
+name.substring [0,name.length-1]
+then you will return
+
+~>Yewinmya
+
+How to write
+============
+"The thing that you want to delete its last word or last sth"(eg.name) . substring (0,x.length-1)
+
+in this,```x.length-1`````` mean ````the last word in the sentence or sth``````````
+
+ -->

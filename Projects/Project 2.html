@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project2</title>
+</head>
+<body>
+
+<h1>To Do Lists</h1>
+<div>
+   <input type="text" id="textbox">
+<button onclick="addlists()">Click</button>
+</div>
+<ul id="lists">
+
+
+</ul>
+<script>
+let i = 0
+function showlists(x){
+   i++;
+return`<li id="addLists(${i})">
+    <button id="edit-btn" onclick="editLists(${i})">Edit</button>
+<button id="Delete-btn" onclick="deletelist(${i})">Delete</button> <span id="innerText${i}"> ${x}</span>
+</li>` ;
+
+
+
+}
+
+let input = document.getElementById(`textbox`)
+let Lists = document.getElementById(`lists`)
+
+function addlists(){
+
+let InputValue = input.value
+ Lists.innerHTML += showlists(InputValue)
+input.innerText =""
+
+}
+
+function deletelist(y){ if(confirm(`Are you sure to delete?`)){
+let current = document.getElementById(`addLists(${y})`);
+Lists.removeChild(current)
+
+
+}else{
+    console.log(`Delete Cancelled`)
+}
+
+}
+ function editLists(z) { let Editing = prompt(`How do you want to edit?`)
+   if(Editing) {let currentText = document.getElementById(`innerText${z}`)
+    currentText.innerHTML =  Editing
+} else {
+
+console.log(`Edit Cancelled`)
+
+}}
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

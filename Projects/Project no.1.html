@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+</head>
+<body>
+
+    <h1>To do Lists</h1>
+
+    <div id="todolist">
+
+        <input type="text" id="Textbox"><button onclick="change()">Change</button> 
+    </div>
+    
+    <ul id="lists">
+<li>Apple</li>
+<li>Orange</li>
+<li>Grape</li>
+
+
+
+    </ul>
+<script>
+let input = document.getElementById(`Textbox`)
+let Lists = document.getElementById(`lists`)
+
+let minTextLength = 3
+
+function textfilter(x){
+
+if(x){if (x.length >=minTextLength ){return x}
+
+else  {alert(`The length of Minimum Text will be at least 3 `); return false}}
+else  {alert(`There is no data`);return false}
+}
+
+
+
+
+function change() {
+
+let InputText = textfilter(input.value)
+if(InputText){Lists.innerHTML += `<li>${InputText}</li>`;
+input.value =""} 
+
+}
+
+//textFilter() is just a normal substitute of functions()
+//but in this case, it looks like a filter.
+//use x in textfilter() cause i need to use this function in another function
+
+
+</script>
+
+</body>
+</html>

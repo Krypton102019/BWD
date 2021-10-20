@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Part2</title>
+
+<style>
+input{padding: 10px 20px; margin: 10px; width: 200px; border:  solid black; border-width: 0px 0px 1px 0px;}
+button{border: 1px white solid; padding:10px 20px; background-color: rgb(53, 209, 236); color: beige;}
+h1{border: 1px black solid;  padding:10px;  text-align: center; border-radius: 10px; width: 200px;font-family: sans-serif;}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+    <br>
+<h1 id="result">Text</h1>
+
+<!-- TExt -->
+<div>
+    <input type="text" id="text" placeholder="type text"> <button id="setText">Set Text</button>
+    
+    </div>
+    <!-- Color -->
+    <div>
+        <input type="color" id="color" onchange="changecolor()"><button id="setColor">Set Color</button>
+        
+        </div>
+ <!-- FOnt Size -->
+        <div>
+            <input type="number" id="fontSize" > <button id="setSize"onclick="changefontSize()">Set fontSize</button>
+            
+            </div>
+
+            <script>
+            //   Text
+                document.getElementById("setText").onclick = function () {
+                let x = document.getElementById(`text`).value ;
+                document.querySelector(`#result`).innerHTML = x
+              console.log (`Change text to "${x}"`)
+
+
+                }
+
+                // Color
+                document.getElementById("setColor").addEventListener("click",function
+                (){let x = document.getElementById(`color`).value;
+                    document.querySelector(`#result`).style.color = x
+                    console.log (`Change color to "${x}"`)
+
+
+               })
+
+               // font
+                function changefontSize() {let x = document.getElementById(`fontSize`).value;
+                document.getElementById(`result`).style.fontSize   = x + `px`
+                console.log (`Change size to "${x}px"`)
+
+
+
+                }
+                function changecolor(){
+                    let x = document.getElementById(`color`).value;
+                    document.querySelector(`#result`).style.color = x
+                 console.log (`Change color to "${x}"`)
+                }
+                
+                
+                
+                </script>
+                
+
+
+
+
+</body>
+</html>

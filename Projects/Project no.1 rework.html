@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1 Rework</title>
+</head>
+<body>
+<h1>Project 1 Rework</h1>
+<p></p>
+    <div><input type="text" id="textbox" ><button onclick="addLists()">Click</button ></div>
+<ul id="lists">
+<li>Russia</li>
+<li>China</li>
+<li>Cuba</li>
+
+</ul>
+
+<script>
+let minTextLength = 3
+function textfilter(x){
+
+if(x){if(x.length >= minTextLength)
+{console.log(`Add another lists`)
+return x
+}
+else{alert(`Minimun Text Length will be at least 3`)};
+return false}
+else {alert(`There is no data`)
+return false}
+
+}
+
+
+let input = document.getElementById(`textbox`)
+let Lists = document.getElementById(`lists`)
+
+function addLists(){
+let InputValue = textfilter (input.value)
+if (InputValue){Lists.innerHTML += `<li>${InputValue}</li>` 
+}
+InputValue=``
+}
+
+
+
+
+</script>
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do Lists</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<style>
+  .container{border-radius: 11px;
+    background: #43dde6;
+    width: 251px;
+    padding: 10px;
+    border-bottom: none}
+.Head{
+    padding-left: 12px;
+    display: inline;
+    color: white
+}
+
+i{font-size: 36px;
+    font-size: 28px;
+    color: white;
+
+}
+
+.add-btn{border: none;
+    background: transparent;
+    margin-left: 33px}
+
+input{margin-top: 10px;
+    padding: 2px;
+    border: none;
+    margin-left: 12px;
+    border-left: 4px solid white;
+    background: transparent;
+    color: white;
+    margin-left: 18px;
+    
+    }
+input:focus{outline: 0px;}
+    ::-webkit-input-placeholder{color: white;}
+
+li{
+    margin-left: -9px;
+    list-style: none;
+}
+.Body-Table{
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+    width: 270px;
+    /* padding: 3px; */
+    margin-left: -10px;
+    margin-top: 8px;
+    margin-bottom: -10px
+
+}
+
+body{background-image: url(assets/Background.jpg);
+
+    background-repeat: no-repeat;
+    /* width: 100px; */
+    background-size: 107%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 768px;
+}
+
+.date{display: block}
+h3{display: inline;}
+
+.E-Btn{border: none;
+    background: transparent;
+    margin-left: 0px;
+    padding: 0px;
+    text-align: left;}
+.Trash-Btn{border: none;
+    background: transparent;
+    margin-left: 0px;
+    padding: 0;}
+</style>
+
+
+
+</head>
+<body >
+
+
+<div class="container">
+    <h1 class="Head">To Do Lists</h1>
+    <button class="add-btn"onclick="add()"><i class="fas fa-plus-circle"></i></button>
+     
+    <div>
+     <input type="text" placeholder="Say Something" id="textbox"></div>
+
+    <!-- <div class="Head-table"> -->
+       
+   
+    <!-- </div> -->
+<div class="Body-Table">
+
+    <div class="lis">
+<ul id="lists">
+
+
+<!-- <li><h3 id="innertext ">Call Kyaw Gyi</h3>
+  <button class="E-Btn" id="Edit-button" onclick="Edit()"><i class="far fa-edit" style="color: lightgreen;
+        font-size: 19px; " ></i></button>
+        <button class="Trash-Btn"id="Delete-btn"><i class="far fa-trash-alt" style="color: red;
+            font-size: 19px"></i></button>
+    <span class="date">8:15 April</span> </li></div> -->
+
+
+
+</ul>
+
+
+
+
+
+</div>
+</div>
+<script>
+
+    let i = 1
+    //show lists like filter
+function showlists(x){ i++;
+   return `<li id="smallLists${i}">
+   <span style="display: flex;
+    justify-content: space-between;
+    width: 200px;">
+
+    <h3 id="innertext${i}" style ="margin: 0;">${x}</h3>
+    <span style="">
+  <button class="E-Btn" id="Edit-button" onclick="Edit(${i})"><i class="far fa-edit" style="color: lightgreen;
+        font-size: 19px; " ></i></button>
+  <button class="Trash-Btn"id="Delete-btn" onclick="Delete(${i})"><i class="far fa-trash-alt" style="color: red;
+            font-size: 19px"></i></button></span>
+            
+            </span>
+    <span class="date">8:15 April</span> </li>`
+
+
+
+
+}
+
+    let input = document.getElementById(`textbox`)
+    let Lists = document.getElementById(`lists`)
+    // for plus btn
+     function add(){
+      let InputValue =  document.getElementById(`textbox`).value
+      document.getElementById(`lists`).innerHTML += showlists(InputValue)
+       Input.value = ""  }
+
+
+//for edit btn
+
+        function Edit(edit) { let Editing = prompt(`How do you want to edit`)
+            if(Editing){  document.querySelector(`#innertext${edit}`).innerHTML = Editing}
+        else{ console.log (`Edit Cancelled`)
+
+
+        }
+        
+        }
+//for delete btn
+
+// function Delete (dlt){
+// let dlt_confirm = confirm(`Are you sure your done?`)
+// if(dlt_confirm){
+
+//     document.getElementById(`smallLists${dlt}`).style.textDecoration = `line-through`}
+// else{console.log(`delete cancelled`)}
+
+// }
+
+
+
+// function linethrough(y){ return y  = `<li><h3 id="innertext${i}" style="text-decoration: line-through;">${document.getElementById(`textbox`).value}</h3>
+//   <button class="E-Btn" id="Edit-button" onclick="Edit(${i})"><i class="far fa-edit" style="color: lightgreen;
+//         font-size: 19px; " ></i></button>
+//         <button class="Trash-Btn"id="Delete-btn"><i class="far fa-trash-alt" style="color: red;
+//             font-size: 19px"></i></button>
+//     <span class="date">8:15 April</span> </li></div>` }
+
+// Put `if and else` in `delete or edit_btn`
+// Put the function that you want to do in `if`
+// In `Edit-btn` use prompt. Your texts will be edited as prompt.values
+// In `Delete_btn` use confirm
+
+
+function Delete (dlt){ i++
+ let dlt_confirm = confirm(`Are you sure your done?`)
+ if(dlt_confirm){ let all = document.getElementById (`smallLists${dlt}`)
+Lists.removeChild(all)
+  }
+  else{console.log(`delete cancelled`)}
+ }
+
+ function checked(){}
+</script>
+    
+</body>
+</html>

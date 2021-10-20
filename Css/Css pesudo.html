@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Pesudo</title>
+<style>
+    /* .one:hover { background-color: red; } */
+    .one:active {background-color: pink;}
+    .one {border: 1px solid black;  width: 500px;  }
+    .text {color: gray; padding: 10px 20px;  }
+    .name:focus{background-color: red; color: white;}
+</style>
+</head>
+<body>
+    <div class="one">
+        <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fugiat? Est aliquam porro dolor laborum quas praesentium perferendis ducimus! Beatae delectus labore aspernatur quia et, veniam odio ratione possimus nemo.
+        </p>
+    </div>
+    <br>
+<fieldset style="width: 50%;"><form action="#" method="GET">
+    <label for="name" >Your Name</label>
+    <input type="text" name="name" id="name" class="name"></form></fieldset>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="calc">
+    <h3 class="display-box"></h3>
+    <div class="keypad"></div>
+</div>
+
+
+
+<script>
+let displaybox = document.querySelector(".display-box")
+let keypad     = document.querySelector(".keypad")
+let calckey    = ["=","+","-","*","/"]
+function showDisplay(x){
+
+displaybox.innerHTML += x
+
+}
+
+
+for (i=0;i<=9;i++){keypad.innerHTML += `<button onclick="showDisplay(${i})">${i}</button>`}
+
+//calc key addition
+
+calckey.map((el)=> {if(el=="="){keypad.innerHTML += `<button onclick="calculate(${el})">${el}</button>`}
+
+
+else {keypad.innerHTML += `<button onclick="calculate(${el})">${el}</button>`}
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
